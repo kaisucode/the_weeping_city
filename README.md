@@ -6,6 +6,10 @@ Archmage's Fortress
   - cults / demon summoners
   - blobs
 
+# CONVENTIONS
+- `blah.pos` refers to a dictionary {"x": 10, "y": 5} with indexes into the grid. Note: the function `pvec(x, y)` returns a valid position vector.
+
+
 # Tower descriptions
 - witchtowers: long range projectiles, cool spells
 - institutes: release melee units
