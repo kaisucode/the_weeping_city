@@ -7,7 +7,7 @@ for (let y = 0; y < NUM_TILES; y++){
 }
 
 let player = new Player();
-player.buildTower(pvec(1,1), TOWER_TYPES.BLOB);
+player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
   createCanvas(500,500);

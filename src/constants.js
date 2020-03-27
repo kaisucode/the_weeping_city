@@ -34,3 +34,12 @@ function pvec(x, y){
   return {"x": x, "y":y};
 }
 
+// TODO: add more modes
+const PLAYER_MODES = { 
+  HOVERING: "hovering", 
+  BUYING: "buying", // clicked on an empty tile
+  UPGRADING: "upgrading", // clicked on a tower
+  NOTHING: "nothing"
+}
+
+
