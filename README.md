@@ -7,6 +7,12 @@ Archmage's Fortress
   - (DPS)       demon summoners
   - 2x2 tile size
 
+# Tower descriptions
+- witchtowers: long range projectiles, cool spells
+- institutes: release melee units
+- demon summoners: splash projectiles 
+- blobs: basic projectile shooting
+
 Mob
   - basic type
   - speed
