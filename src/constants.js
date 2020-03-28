@@ -1,5 +1,6 @@
 const TILE_SIZE = 32;
 const NUM_TILES = 16;
+
 const TOWER_TYPES = {
   BLOB: 'blob',
   DEMON: 'demon',
@@ -14,7 +15,6 @@ const TOWER_COSTS = {
   "institute": 20,
   "demon": 30
 };
-
 
 /*
  * grid will be a 2D array of tile types
@@ -34,12 +34,20 @@ function pvec(x, y){
   return {"x": x, "y":y};
 }
 
+const CENTER = pvec(NUM_TILES*TILE_SIZE>>1, NUM_TILES*TILE_SIZE>>1);
+
 // TODO: add more modes
 const PLAYER_MODES = { 
   HOVERING: "hovering", 
   BUYING: "buying", // clicked on an empty tile
   UPGRADING: "upgrading", // clicked on a tower
   NOTHING: "nothing"
+}
+
+function xylocation_to_pos(x, y){
+  let xpos = Math.max(Math.min(NUM_TILES-1, Math.floor(x/TILE_SIZE)), 0);
+  let ypos = Math.max(Math.min(NUM_TILES-1, Math.floor(y/TILE_SIZE)), 0);
+  return pvec(xpos, ypos);
 }
 
 

@@ -6,15 +6,25 @@ for (let y = 0; y < NUM_TILES; y++){
   }
 }
 
+$("body").css("cursor", "none");
+
 let player = new Player();
 player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
-  createCanvas(500,500);
+  createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
 }
 
 function draw(){
   background(200);
-  player.renderTowers();
+  player.renderTowers(xylocation_to_pos(mouseX, mouseY));
+
+  fill(0,255,255);
+  noStroke();
+  ellipse(mouseX, mouseY, 15,15);
+}
+
+function mouseReleased(){
+  player.finishPlacingTower();
 }
 
