@@ -1,10 +1,11 @@
 
 Archmage's Fortress
   - geographical influences (small barriers, swamp, lightning)
-  - witchtowers (self-destructing bombs, tracking spells, curses/special effects, AoE boosts)
-  - institutions of magic (send out acolytes/scholars to attack)
-  - cults / demon summoners
-  - blobs
+  - (standard)  blobs
+  - (support)   witchtowers (self-destructing bombs, tracking spells, curses/special effects, AoE boosts)
+  - (mob melee) institutions of magic (send out acolytes/scholars to attack)
+  - (DPS)       demon summoners
+  - 2x2 tile size
 
 # CONVENTIONS
 - `blah.pos` refers to a dictionary {"x": 10, "y": 5} with indexes into the grid. Note: the function `pvec(x, y)` returns a valid position vector.
@@ -12,12 +13,23 @@ Archmage's Fortress
 
 # Tower descriptions
 - witchtowers: long range projectiles, cool spells
+  Speed decrease, poison effect, increase surrounding damage
 - institutes: release melee units
 - demon summoners: splash projectiles 
 - blobs: basic projectile shooting
+- archmage's fortress: seeking missiles, walls
 
 Mob
   - basic type
   - speed
-  - 
+  - 1x1 tile size
+
+**TODO
+
+Alek
+  - tower.js
+  - mobs.js
+
+Kevin
+  - interface (place, upgrade, activating spells)
 

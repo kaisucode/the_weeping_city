@@ -17,7 +17,8 @@ function setup(){
 }
 
 function draw(){
-  background(200);
+	// background('#0C0A33');
+	background(200);
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
 
   fill(0,255,255);
