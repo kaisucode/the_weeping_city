@@ -18,6 +18,15 @@ function setup(){
 function draw(){
 	// background('#0C0A33');
 	background(200);
+
+  stroke(0,0,0,20);
+  for(let x = 0; x < NUM_TILES; x++){
+    line(TILE_SIZE*x, 0, TILE_SIZE*x, TILE_SIZE*NUM_TILES);
+  }
+  for(let y = 0; y < NUM_TILES; y++){
+    line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES, TILE_SIZE*y);
+  }
+
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
 
   fill(0,255,255);

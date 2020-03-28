@@ -45,11 +45,10 @@ const PLAYER_MODES = {
 }
 
 function xylocation_to_pos(x, y){
-  let xpos = Math.max(Math.min(NUM_TILES-1, Math.floor(x/TILE_SIZE)), 0);
-  let ypos = Math.max(Math.min(NUM_TILES-1, Math.floor(y/TILE_SIZE)), 0);
+  let xpos = Math.max(Math.min(NUM_TILES-2, Math.floor(x/TILE_SIZE)), 0);
+  let ypos = Math.max(Math.min(NUM_TILES-2, Math.floor(y/TILE_SIZE)), 0);
   return pvec(xpos, ypos);
 }
-
 
 const PROJECTILE_TYPES = {
   SPIT: "spit"
@@ -61,6 +60,4 @@ const PROJECTILE_STATS = {
     "damage": 10
   }
 }
-
-
 
