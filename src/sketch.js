@@ -12,7 +12,8 @@ let player = new Player();
 player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
-  createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
+  let canvas = createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
+  canvas.id("p5canvas");
 }
 
 function draw(){
