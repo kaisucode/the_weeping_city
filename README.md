@@ -30,6 +30,9 @@
 
 # TODO
 
+### General
+  - stop building overlap
+
 ### Alek
   - make it not a square grid
   - towers should shoot stuff (randomly)
@@ -37,7 +40,6 @@
     - costs lives if the mobs get to the end
 
 ### Kevin
-  - need to make it so that player.startPlacingTower(tower_type) is called onclick of Kevin's interface character card
   - mobs
     - follow path in a line from path[0] to path[1] until you get to path[1], then delete path[0] OR something like this
     - path = [pvec(1,1), pvec(1,10), pvec(15,10)] 

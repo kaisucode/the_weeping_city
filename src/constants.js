@@ -72,7 +72,7 @@ const MOB_STATS = {
   "dog": {
     "speed": 1,
     "health": 10
-  }
+  },
   "jumpydude": {
     "speed": 2,
     "health": 100
