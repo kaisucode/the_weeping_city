@@ -51,3 +51,16 @@ function xylocation_to_pos(x, y){
 }
 
 
+const PROJECTILE_TYPES = {
+  SPIT: "spit"
+}
+
+const PROJECTILE_STATS = {
+  "spit": {
+    "dims": pvec(10,10),
+    "damage": 10
+  }
+}
+
+
+
