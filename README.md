@@ -1,5 +1,9 @@
 
-Archmage's Fortress
+# the_weeping_city
+
+![img.png](img.png)
+
+# Archmage's Fortress
   - geographical influences (small barriers, swamp, lightning)
   - (standard)  blobs
   - (support)   witchtowers (self-destructing bombs, tracking spells, curses/special effects, AoE boosts)
@@ -19,17 +23,11 @@ Archmage's Fortress
 - blobs: basic projectile shooting
 - archmage's fortress: seeking missiles, walls
 
-Mob
+# Mob
   - basic type
   - speed
   - 1x1 tile size
 
-**TODO
+# TODO
 
-Alek
-  - tower.js
-  - mobs.js
-
-Kevin
-  - interface (place, upgrade, activating spells)
 
