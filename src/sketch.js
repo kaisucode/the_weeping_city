@@ -6,7 +6,6 @@ for (let y = 0; y < NUM_TILES; y++){
   }
 }
 
-$("body").css("cursor", "none");
 
 let player = new Player();
 player.startPlacingTower(TOWER_TYPES.BLOB);
