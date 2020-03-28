@@ -1,17 +1,31 @@
+let grid = []; // grid[y][x]
+for (let y = 0; y < NUM_TILES; y++){
+  grid.push([]);
+  for (let x = 0; x < NUM_TILES; x++){
+    grid[y].push(new Tile(TILE_TYPES.empty, pvec(x, y), null));
+  }
+}
 
-let TILE_SIZE = 32;
-const TOWER_TYPES = {
-  BLOB: 'blob',
-  DEMON: 'demon',
-  WITCH: 'witch',
-  INSTITUTE: 'institute'
-};
+$("body").css("cursor", "none");
+
+let player = new Player();
+player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
-  createCanvas(500,500);
+  createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
 }
 
 function draw(){
-	background('#0C0A33');
+	// background('#0C0A33');
+	background(200);
+  player.renderTowers(xylocation_to_pos(mouseX, mouseY));
+
+  fill(0,255,255);
+  noStroke();
+  ellipse(mouseX, mouseY, 15,15);
+}
+
+function mouseReleased(){
+  player.finishPlacingTower();
 }
 

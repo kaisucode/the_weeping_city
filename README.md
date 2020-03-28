@@ -7,6 +7,10 @@ Archmage's Fortress
   - (DPS)       demon summoners
   - 2x2 tile size
 
+# CONVENTIONS
+- `blah.pos` refers to a dictionary {"x": 10, "y": 5} with indexes into the grid. Note: the function `pvec(x, y)` returns a valid position vector.
+
+
 # Tower descriptions
 - witchtowers: long range projectiles, cool spells
   Speed decrease, poison effect, increase surrounding damage
