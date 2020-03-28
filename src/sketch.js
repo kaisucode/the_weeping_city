@@ -8,7 +8,7 @@ for (let y = 0; y < NUM_TILES; y++){
 
 
 let player = new Player();
-player.startPlacingTower(TOWER_TYPES.BLOB);
+// player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
   let canvas = createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
@@ -28,6 +28,8 @@ function draw(){
   }
 
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
+	player.updateSegCounter();
+	player.updateHpCounter();
 
   fill(0,255,255);
   noStroke();

@@ -1,6 +1,6 @@
 body {
   background-color: #000000;
-	background-color: #0C0A33;
+	/* background-color: #0C0A33; */
 	color: #B2FFF7;
 	font-family: 'Handlee', cursive;
 	display: inline-block;
@@ -8,8 +8,8 @@ body {
 
 #p5canvas {
 	position: absolute;
-	top: 16vh;
-	left: 28vw;
+	bottom: 10vh;
+	left: 26vw;
 	background-color: blue;
 }
 
@@ -27,6 +27,7 @@ hr {
 }
 
 .container {
+	background-color: #0C0A33;
 	height: 82vh;
 	width: 20vw;
 	margin-top: 10vh;
@@ -34,6 +35,8 @@ hr {
 	border-radius: 16px;
 	padding: 0;
 	/* overflow-y: scroll; */
+
+	margin-left: 2vw;
 }
 
 
@@ -78,4 +81,41 @@ hr {
 	cursor: pointer;
 }
 
+#waveCounterButton {
+	position: absolute;
+	bottom: 10vh;
+	left: 63vw;
+	width: 10vw;
+	height: 10vh;
+	text-align: center;
+	border-radius: 10px;
+	border: 3px solid #596E80;
+	background-color: #0C0A33;
+	display: flex;
+  justify-content: center;
+  flex-direction: column;
+	font-size: 18px;
+}
+
+#waveCounterButton:hover {
+	cursor: pointer;
+}
+
+#hpCounter {
+	position: absolute;
+	top: 11vh;
+	left: 26vw;
+	width: 512px;
+	height: 5vh;
+	font-size: 24px;
+}
+
+#segCounter {
+	position: absolute;
+	top: 11vh;
+	left: 50vw;
+	width: 512px;
+	height: 5vh;
+	font-size: 24px;
+}
 

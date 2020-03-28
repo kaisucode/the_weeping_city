@@ -1,5 +1,6 @@
 class Player {
   constructor(){
+		this.hp = 100;
     this.seg = 0; // in-game currency
     this.towers = [];
     this.mode = PLAYER_MODES.NOTHING;
@@ -31,4 +32,10 @@ class Player {
       }
     }
   }
+	updateSegCounter(){
+		$("#segCounter").text(`Seg: x${this.seg}`);
+	}
+	updateHpCounter(){
+		$("#hpCounter").text(`Health: ${this.hp}`);
+	}
 }
