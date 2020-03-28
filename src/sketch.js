@@ -12,6 +12,6 @@ function setup(){
 }
 
 function draw(){
-  background('#0C0A33');
+	background('#0C0A33');
 }
 

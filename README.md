@@ -9,9 +9,11 @@ Archmage's Fortress
 
 # Tower descriptions
 - witchtowers: long range projectiles, cool spells
+  Speed decrease, poison effect, increase surrounding damage
 - institutes: release melee units
 - demon summoners: splash projectiles 
 - blobs: basic projectile shooting
+- archmage's fortress: seeking missiles, walls
 
 Mob
   - basic type
