@@ -16,11 +16,18 @@ class Player {
     this.mode = PLAYER_MODES.HOVERING;
     this.focussed_tower = new Tower(CENTER, tower_type);
   }
+
   finishPlacingTower(){
-    this.seg -= this.focussed_tower.cost;
-    this.towers.push(this.focussed_tower);
-    this.focussed_tower.built = true;
+    if(this.focussed_tower.locationValid()){
+      this.seg -= this.focussed_tower.cost;
+      this.towers.push(this.focussed_tower);
+      this.focussed_tower.performBuild();
+    }
+    else{
+      $.notify("hey, don't place that there");
+    }
   }
+
   renderTowers(mousePos){
     for(let i = 0; i < this.towers.length; i++){
       this.towers[i].render();

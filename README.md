@@ -31,13 +31,12 @@
 # TODO
 
 ### General
-  - stop building overlap
-  - in sketch.js mousereleased, only finish placing down structure if mouse coordinates within p5canvas
 
 ### Alek
   - towers should shoot stuff (randomly)
   - path map - spiral 
     - costs lives if the mobs get to the end
+  - stop building overlap
 
 ### Kevin
   - mobs

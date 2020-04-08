@@ -1,3 +1,4 @@
+
 let grid = []; // grid[y][x]
 for (let y = 0; y < NUM_TILES.y; y++){
   grid.push([]);
@@ -22,7 +23,7 @@ function draw(){
   for(let x = 0; x < NUM_TILES.x; x++){
     line(TILE_SIZE*x, 0, TILE_SIZE*x, TILE_SIZE*NUM_TILES.y);
   }
-  for(let y = 0; y < NUM_TILES; y++){
+  for(let y = 0; y < NUM_TILES.y; y++){
     line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES.x, TILE_SIZE*y);
   }
 
