@@ -45,3 +45,6 @@
     - follow path in a line from path[0] to path[1] until you get to path[1], then delete path[0] OR something like this
     - path = [pvec(1,1), pvec(1,10), pvec(15,10)] 
 
+MOBNAME.png convention
+y-x grid
+

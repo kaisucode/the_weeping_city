@@ -10,9 +10,16 @@ for (let y = 0; y < NUM_TILES; y++){
 let player = new Player();
 // player.startPlacingTower(TOWER_TYPES.BLOB);
 
+
+let mobs = [];
+let mobImages = {};
+
 function setup(){
   let canvas = createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
   canvas.id("p5canvas");
+
+	mobImages["jumpydude"] = loadImage("assets/jumpydude.png");
+	mobs.push(new Mob(pvec(0, 0), "jumpydude"));
 }
 
 function draw(){
@@ -30,6 +37,10 @@ function draw(){
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
 	player.updateSegCounter();
 	player.updateHpCounter();
+
+	for (let i in mobs){
+		mobs[i].render();
+	}
 
   fill(0,255,255);
   noStroke();
