@@ -1,17 +1,16 @@
 let grid = []; // grid[y][x]
-for (let y = 0; y < NUM_TILES; y++){
+for (let y = 0; y < NUM_TILES.y; y++){
   grid.push([]);
-  for (let x = 0; x < NUM_TILES; x++){
-    grid[y].push(new Tile(TILE_TYPES.empty, pvec(x, y), null));
+  for (let x = 0; x < NUM_TILES.x; x++){
+    grid[y].push(new Tile(TILE_TYPES.EMPTY, pvec(x, y), null));
   }
 }
-
 
 let player = new Player();
 // player.startPlacingTower(TOWER_TYPES.BLOB);
 
 function setup(){
-  let canvas = createCanvas(TILE_SIZE*NUM_TILES,TILE_SIZE*NUM_TILES);
+  let canvas = createCanvas(TILE_SIZE*NUM_TILES.x,TILE_SIZE*NUM_TILES.y);
   canvas.id("p5canvas");
 }
 
@@ -20,11 +19,11 @@ function draw(){
 	background(200);
 
   stroke(0,0,0,20);
-  for(let x = 0; x < NUM_TILES; x++){
-    line(TILE_SIZE*x, 0, TILE_SIZE*x, TILE_SIZE*NUM_TILES);
+  for(let x = 0; x < NUM_TILES.x; x++){
+    line(TILE_SIZE*x, 0, TILE_SIZE*x, TILE_SIZE*NUM_TILES.y);
   }
   for(let y = 0; y < NUM_TILES; y++){
-    line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES, TILE_SIZE*y);
+    line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES.x, TILE_SIZE*y);
   }
 
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
@@ -37,6 +36,9 @@ function draw(){
 }
 
 function mouseReleased(){
-  player.finishPlacingTower();
+  if(player.focussed_tower != null){
+    if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height)
+      player.finishPlacingTower();
+  }
 }
 
