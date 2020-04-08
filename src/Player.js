@@ -1,7 +1,7 @@
 class Player {
   constructor(){
 		this.hp = 100;
-    this.seg = 0; // in-game currency
+    this.seg = 1000; // in-game currency
     this.towers = [];
     this.mode = PLAYER_MODES.NOTHING;
 
@@ -19,9 +19,14 @@ class Player {
 
   finishPlacingTower(){
     if(this.focussed_tower.locationValid()){
-      this.seg -= this.focussed_tower.cost;
-      this.towers.push(this.focussed_tower);
-      this.focussed_tower.performBuild();
+      if(this.seg >= this.focussed_tower.cost){
+        this.seg -= this.focussed_tower.cost;
+        this.towers.push(this.focussed_tower);
+        this.focussed_tower.performBuild();
+      }
+      else{
+        $.notify("you dont have enough segs to buy that dude");
+      }
     }
     else{
       $.notify("hey, don't place that there");
