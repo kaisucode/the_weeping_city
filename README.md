@@ -36,7 +36,6 @@
   - towers should shoot stuff (randomly)
   - path map - spiral 
     - costs lives if the mobs get to the end
-  - stop building overlap
 
 ### Kevin
   - mobs

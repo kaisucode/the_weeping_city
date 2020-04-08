@@ -24,10 +24,11 @@ const TOWER_COSTS = {
 */
 const TILE_TYPES = {
   EMPTY: 'empty', 
-  PATH: 'path', 
-  TOWER: 'tower',
-  FORTRESS: 'fortress',
-  SPAWN: 'spawn'
+  PATH: 'path',  // tiles mobs walk on
+  GRASS: 'grass', // tiles you can build on
+  TOWER: 'tower', // tile occupied by a tower
+  FORTRESS: 'fortress', // tile of our fortress (we lose health if mobs touch this)
+  SPAWN: 'spawn' // tile that mobs spawn from
 };
 
 function pvec(x, y){
@@ -78,5 +79,4 @@ const MOB_STATS = {
     "health": 100
   }
 }
-
 
