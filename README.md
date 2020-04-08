@@ -35,7 +35,6 @@
   - in sketch.js mousereleased, only finish placing down structure if mouse coordinates within p5canvas
 
 ### Alek
-  - make it not a square grid
   - towers should shoot stuff (randomly)
   - path map - spiral 
     - costs lives if the mobs get to the end

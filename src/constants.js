@@ -1,5 +1,5 @@
 const TILE_SIZE = 32;
-const NUM_TILES = 16;
+const NUM_TILES = {"x": 24, "y": 16};
 
 const TOWER_TYPES = {
   BLOB: 'blob',
@@ -45,8 +45,8 @@ const PLAYER_MODES = {
 }
 
 function xylocation_to_pos(x, y){
-  let xpos = Math.max(Math.min(NUM_TILES-2, Math.floor(x/TILE_SIZE)), 0);
-  let ypos = Math.max(Math.min(NUM_TILES-2, Math.floor(y/TILE_SIZE)), 0);
+  let xpos = Math.max(Math.min(NUM_TILES.x-2, Math.floor(x/TILE_SIZE)), 0);
+  let ypos = Math.max(Math.min(NUM_TILES.y-2, Math.floor(y/TILE_SIZE)), 0);
   return pvec(xpos, ypos);
 }
 
