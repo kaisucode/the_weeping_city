@@ -2,6 +2,7 @@
 # the_weeping_city
 
 ![archives/readme_picture.png](archives/readme_picture.png)
+![archives/td_gameplay.png](archives/td_gameplay.png)
 
 # Archmage's Fortress
   - geographical influences (small barriers, swamp, lightning)
