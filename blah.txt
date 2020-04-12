@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 oa;hgr;rhgrlg
 agso;riragj
 a;solgh;orgh;
@@ -5,15 +6,48 @@ ag;orh;rgh
 aegs;ha;sg
 awegi;hsag
 wagri;ohas;gd
+=======
+<<<<<<< HEAD
+yo kevvvvvvviiiasdfasdfasdfasdfn
+
+asdfjasdfaskdlfjklasdfjklasdfj
+a
+s
+asas
+asdfasdfjasdfasdf
+asdf
+asdsdfjklasdfklasdklfaskldfjasdfajsdfasldfjaklsdfklasdf
+asdfjlkasdf
+asdf
+sdfasdfasdfasf
+`gq`
+splits long lines
+
+very useful when writing big stuffs in 
+asjdfasdfasdfasdfk ladsfklaskdlfaskldfjkladsflasdf
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdf
+asjdfasdfasdfasdfasdfasdfsdfkladsfklaskdlfaskldfjklasdfklasdflasdklfasdklfdsflasdf
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdfsd
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdasdfkasdfjklasdf
+asdfasdflkasdklfaklsdflkasdfklasdflkjasjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdf
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdf
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdf
+asjdfasdfasdfasdfkladsfklaskdlfaskldfjkladsflasdf
+sdklasdfasdfasdff
+>>>>>>> 5e6bf5b95370ce1e22b147c84ac6e2e1bd170364
 asdfasdfasdfaksdfjklasdaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+<<<<<<< HEAD
+=======
+vero eos et accusam et justo duo doliasdfjaksldfaksdfjkasdfjaklsdfjklasdfjklores et ea rebum. Stet clita kasd gubergren,
+>>>>>>> 5e6bf5b95370ce1e22b147c84ac6e2e1bd170364
 no sea takimata sanctus est Lorem ipsum dolor sit amet.
 akgrslhlergh;a
-gawelrghlareghlrjg
+gawelrakslfjalksdfjklasdghlareghlrjg
 ag
 
 fdg
@@ -26,12 +60,37 @@ ds
 fhd
 sfh
 dsfgh
+<<<<<<< HEAD
+=======
+gfg
+fg
+hf
+dgh
+fd
+hfd
+hsjdklf
+asdfjklasdfklasdgfd
+hdf
+ghjsdklfjaksldf
+asdfjklasdfklasdf
+gh
+dfg
+h
+fdgh
+f
+dgh
+
+gfh
+
+asdfasdfklasdfkljsadlkfjalksdfjlfd
+gh
+>>>>>>> 5e6bf5b95370ce1e22b147c84ac6e2e1bd170364
 f
 ghd
 
 fd
 gh
 
->>>>>>> e7d0f27651f005f18bf82509953c4364b802358e
+>>>>>>> e7d0f2asdfkjaskldfjklasdfjklasdf7651f005f18bf82509953c4364b802358e
 
-
+sadkfjalksdfj
