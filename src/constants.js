@@ -62,7 +62,6 @@ const PROJECTILE_STATS = {
   }
 }
 
-
 const MOB_TYPES = {
   DOG: "dog",
   JUMPYDUDE: "jumpydude"
@@ -71,11 +70,11 @@ const MOB_TYPES = {
 // TODO: make this legit
 const MOB_STATS = {
   "dog": {
-    "speed": 1,
+    "speed": 0.01,
     "health": 10
   },
   "jumpydude": {
-    "speed": 2,
+    "speed": 0.5,
     "health": 100
   }
 }

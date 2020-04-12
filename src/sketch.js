@@ -11,7 +11,7 @@ let player = new Player();
 
 let mobs = [];
 let mobImages = {};
-let mobPath = [pvec(0, 0), pvec(0, 1), pvec(0, 2), pvec(0, 3), pvec(1, 3), pvec(2, 3)];
+const mobPath = [pvec(0, 0), pvec(0, 1), pvec(0, 2), pvec(0, 3), pvec(1, 3), pvec(2, 3), pvec(10,3), pvec(10, 10), pvec(15, 10)];
 let bgImage;
 
 let current_map = "basic_map"; // load this map

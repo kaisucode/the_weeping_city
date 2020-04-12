@@ -5,37 +5,38 @@ class Mob {
     this.speed = MOB_STATS[this.type].speed;
     this.health = MOB_STATS[this.type].health;
 		this.img = mobImages[this.type];
-
-		this.pathProgress = pvec(0, 0);
+    
+    this.path = [...mobPath];
+    this.renderPos = pvec(pos.x*TILE_SIZE, pos.y*TILE_SIZE);
   }
 
-	vectorSubtraction(vector1, vector2){
-		return pvec(vector1.x - vector2.x, vector1.y - vector2.y);
-	}
-	vectorAddition(vector1, vector2){
-		return pvec(vector1.x + vector2.x, vector1.y + vector2.y);
-	}
-
 	update(){
-		let vectorSubtracted = this.vectorSubtraction(mobPath[1], mobPath[0]);
-		let vectorMagnitude = Math.sqrt((vectorSubtracted.x*vectorSubtracted.x)+(vectorSubtracted.y*vectorSubtracted.y));
+    if(this.path.length < 2)
+      return;
 
-		if (this.vectorSubtraction(this.pathProgress, mobPath[1]) * this.vectorSubtraction(this.pathProgress, mobPath[1]) < this.speed) {
-			mobPath.splice(0);
-			pathProgress = pvec(0, 0);
-		}
+    let pathLeft = createVector(this.path[1].x*TILE_SIZE - this.renderPos.x, this.path[1].y*TILE_SIZE - this.renderPos.y);
+    if (pathLeft.mag(pathLeft) < this.speed){
+      this.path.splice(0, 1);
+      this.renderPos.x += pathLeft.x;
+      this.renderPos.y += pathLeft.y;
+    }
+    else{
+      pathLeft.setMag(this.speed);
+      this.renderPos.x += pathLeft.x;
+      this.renderPos.y += pathLeft.y;
+    }
 
-		this.pathProgress = pvec(vectorSubtracted.x * this.speed / vectorMagnitude, vectorSubtracted.x * this.speed / vectorMagnitude);
-
-		// pos = round(vectorAddition(mobPath[0] + pathProgress)*TILE_SIZE);
-
+		this.pos.x = round(this.renderPos.x/TILE_SIZE);
+		this.pos.y = round(this.renderPos.y/TILE_SIZE);
 	}
+
   render(){
-    // mob
     // health bar
-    // fill(255,0,0);
-		// ellipse(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, this.dims.x, this.dims.y);
-		image(this.img, this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE, TILE_SIZE);
+    fill(255,0,0);
+    rect(this.renderPos.x, this.renderPos.y, TILE_SIZE, 3);
+		
+    // mob
+    image(this.img, this.renderPos.x, this.renderPos.y, TILE_SIZE, TILE_SIZE);
 
   }
 
