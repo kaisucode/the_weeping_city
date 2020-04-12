@@ -2,6 +2,7 @@ class Player {
   constructor(){
 		this.hp = 100;
     this.seg = 1000; // in-game currency
+
     this.towers = [];
     this.mode = PLAYER_MODES.NOTHING;
 		this.towerIndex = 0;
