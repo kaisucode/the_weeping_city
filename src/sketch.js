@@ -6,6 +6,13 @@ for (let y = 0; y < NUM_TILES.y; y++){
     grid[y].push(new Tile(TILE_TYPES.EMPTY, pvec(x, y), null));
   }
 }
+let towerIdGrid = [];
+for (let y = 0; y < NUM_TILES.y; y++){
+  towerIdGrid.push([]);
+  for (let x = 0; x < NUM_TILES.x; x++){
+    towerIdGrid[y].push(null);
+  }
+}
 
 let player = new Player();
 
@@ -62,24 +69,28 @@ function draw(){
   ellipse(mouseX, mouseY, 15,15);
 }
 
-// function mouseReleased(){
-//   if(player.focussed_tower != null){
-//     if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) 
-//       player.finishPlacingTower();
-//   }
-// }
-
 function mousePressed(){
-  if(player.focussed_tower != null){
-		if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+	if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+		if(player.focussed_tower != null){
 			player.finishPlacingTower();
+		}
+		else{
+			let currentMousePos = xylocation_to_pos(mouseX, mouseY);
+			let temp = towerIdGrid[currentMousePos.y][currentMousePos.x];
+			if (temp != null)
+				player.selectedTowerId = temp
+			player.selectTowerMode();
 		}
   }
 }
 
 function keyPressed(){
-	if (keyCode === 27) {
+	if (keyCode === 27) {		// Esc
 		player.placeTowerMode();
+    if (player.mode == PLAYER_MODES.HOVERING){
+			player.focussed_tower = null;
+			player.mode = PLAYER_MODES.NOTHING;
+		}
 	}
 }
 

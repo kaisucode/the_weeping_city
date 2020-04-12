@@ -1,10 +1,18 @@
 class Tower {
-  constructor(pos, type){
+  constructor(pos, type, id){
     this.pos = pos; 
     this.type = type;
     this.cost = TOWER_COSTS[this.type];
     this.built = false;
     this.projectile = null;
+		this.id = id;
+
+		this.upgradeLevels = {
+			"power": 1, 
+			"speed": 1, 
+			"range": 1, 
+			"specialAttack": 1
+		}
   }
 
   // this function returns the boolean value "is the location of the building (which has this.built=false right now) on top of other stuff on the grid?"
@@ -26,6 +34,7 @@ class Tower {
     for (let dx = 0; dx < 2; dx++){
       for (let dy = 0; dy < 2; dy++){
         grid[this.pos.y+dy][this.pos.x+dx] = this.type;
+        towerIdGrid[this.pos.y+dy][this.pos.x+dx] = this.id;
       }
     }
   }
@@ -60,6 +69,7 @@ class Tower {
   }
 
 	upgrade(upgradeName){
-		$.notify("upgrading "+upgradeName + " for " + this.type);
+		// $.notify("upgrading "+upgradeName + " for " + this.type);
+		$.notify(`Upgrading ${upgradeName} for ${this.type}, id=${player.selectedTowerId}`);
 	}
 }

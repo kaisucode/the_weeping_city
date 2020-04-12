@@ -89,28 +89,28 @@
 			<div id="buildTower" class="hudHalfSection">
 				<h2>Select upgrade</h2>
 				<ul class="characterCard">
-					<li>
+					<li onclick="player.towers[player.selectedTowerId].upgrade('power');">
 						<center>
-							<img src="assets/blobIcon.png" alt="" onclick="player.focussed_tower.upgrade('speed');"/>
+							<img src="assets/blobIcon.png" alt=""/>
+							<div class="title">Power</div>
+						</center>
+					</li>
+					<li onclick="player.towers[player.selectedTowerId].upgrade('speed');">
+						<center>
+							<img src="assets/blobIcon.png" alt=""/>
 							<div class="title">Speed</div>
 						</center>
 					</li>
-					<li>
+					<li onclick="player.towers[player.selectedTowerId].upgrade('range');">
 						<center>
-							<img src="assets/instituteIcon.png" alt="" onclick="player.startPlacingTower(TOWER_TYPES.INSTITUTE);"/>
-							<div class="title">Institutes</div>
+							<img src="assets/blobIcon.png" alt=""/>
+							<div class="title">Range</div>
 						</center>
 					</li>
-					<li>
+					<li onclick="player.towers[player.selectedTowerId].upgrade('specialAttack');">
 						<center>
-							<img src="assets/witchTowerIcon.png" alt="" onclick="player.startPlacingTower(TOWER_TYPES.WITCH);"/>
-							<div class="title">Witchtowers</div>
-						</center>
-					</li>
-					<li>
-						<center>
-							<img src="assets/demonSummonerIcon.png" alt="" onclick="player.startPlacingTower(TOWER_TYPES.DEMON);"/>
-							<div class="title">Summoners</div>
+							<img src="assets/blobIcon.png" alt=""/>
+							<div class="title">Special Attack</div>
 						</center>
 					</li>
 				</ul>

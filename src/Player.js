@@ -4,18 +4,19 @@ class Player {
     this.seg = 1000; // in-game currency
     this.towers = [];
     this.mode = PLAYER_MODES.NOTHING;
+		this.towerIndex = 0;
 
     // note: if focussed_tower.built is true, then we are showing the focussed
     // tower's stats and can upgrade it and stuff
     // else if focussed_tower.built is fasle then we are hovering it at the mouse position
     // its build is pending
     this.focussed_tower = null; // pointer to tower object
+		this.selectedTowerId = null;
 
   }
   startPlacingTower(tower_type){
     this.mode = PLAYER_MODES.HOVERING;
-    this.focussed_tower = new Tower(CENTER, tower_type);
-		player.selectTowerMode();
+    this.focussed_tower = new Tower(CENTER, tower_type, this.towerIndex);
   }
 
   finishPlacingTower(){
@@ -24,6 +25,9 @@ class Player {
         this.seg -= this.focussed_tower.cost;
         this.towers.push(this.focussed_tower);
         this.focussed_tower.performBuild();
+				this.selectedTowerId = this.towerIndex;
+				this.towerIndex++;
+				this.selectTowerMode();
       }
       else{
         $.notify("you dont have enough segs to buy that dude");
