@@ -39,8 +39,12 @@
   - costs lives if the mobs get to the end
 
 ### Kevin
-- custom on hover info display card for towers (should probably explain what the tower is, and show its stats)
-
-
+  - custom on hover info display card for towers (should probably explain what the tower is, and show its stats)
+  - mobs
+    - follow path in a line from path[0] to path[1] until you get to path[1], then delete path[0] OR something like this
+    - path = [pvec(1,1), pvec(1,10), pvec(15,10)] 
+  - developer console rwd
+  - upgrade the already set-down towers
+  - power, speed, range, specialattack
 
 

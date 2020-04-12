@@ -62,10 +62,24 @@ function draw(){
   ellipse(mouseX, mouseY, 15,15);
 }
 
-function mouseReleased(){
+// function mouseReleased(){
+//   if(player.focussed_tower != null){
+//     if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) 
+//       player.finishPlacingTower();
+//   }
+// }
+
+function mousePressed(){
   if(player.focussed_tower != null){
-    if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height)
-      player.finishPlacingTower();
+		if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+			player.finishPlacingTower();
+		}
   }
+}
+
+function keyPressed(){
+	if (keyCode === 27) {
+		player.placeTowerMode();
+	}
 }
 

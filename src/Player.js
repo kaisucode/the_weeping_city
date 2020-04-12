@@ -15,6 +15,7 @@ class Player {
   startPlacingTower(tower_type){
     this.mode = PLAYER_MODES.HOVERING;
     this.focussed_tower = new Tower(CENTER, tower_type);
+		player.selectTowerMode();
   }
 
   finishPlacingTower(){
@@ -50,4 +51,14 @@ class Player {
 	updateHpCounter(){
 		$("#hpCounter").text(`Health: ${this.hp}`);
 	}
+
+	placeTowerMode(){
+		$("#commandContainer").hide();
+		$("#towerContainer").show();
+	}
+	selectTowerMode(){
+		$("#commandContainer").show();
+		$("#towerContainer").hide();
+	}
+
 }
