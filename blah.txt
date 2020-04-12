@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 yo kevvvvvvviiiasdfasdfasdfasdfn
 
 asdfjasdfaskdlfjklasdfjklasdfj
@@ -28,5 +29,51 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
 vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
 no sea takimata sanctus est Lorem ipsum dolor sit amet.
+=======
+awugrhelgrlghrhg;rg
+dlrkghlrksghlkrhg
+akgrslhlergh;a
+gawelrghlareghlrjg
+ag
+
+fdg
+adfg
+dg
+dfg
+sgdfsgdsfgdfs
+
+ds
+fhd
+sfh
+dsfgh
+gfg
+fg
+hf
+dgh
+fd
+hfd
+h
+gfd
+hdf
+gh
+f
+gh
+dfg
+h
+fdgh
+f
+dgh
+
+gfh
+
+fd
+gh
+f
+ghd
+
+fd
+gh
+
+>>>>>>> e7d0f27651f005f18bf82509953c4364b802358e
 
 
