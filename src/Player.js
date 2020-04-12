@@ -22,7 +22,7 @@ class Player {
   finishPlacingTower(){
     if(this.focussed_tower.locationValid()){
       if(this.seg >= this.focussed_tower.cost){
-        this.seg -= this.focussed_tower.cost;
+        this.updateSeg(-this.focussed_tower.cost);
         this.towers.push(this.focussed_tower);
         this.focussed_tower.performBuild();
 				this.selectedTowerId = this.towerIndex;
@@ -41,6 +41,7 @@ class Player {
   renderTowers(mousePos){
     for(let i = 0; i < this.towers.length; i++){
       this.towers[i].render();
+      this.towers[i].update();
     }
     if (this.mode == PLAYER_MODES.HOVERING){
       if(!this.focussed_tower.built){
@@ -49,10 +50,12 @@ class Player {
       }
     }
   }
-	updateSegCounter(){
+	updateSeg(delta){
+    this.seg += delta;
 		$("#segCounter").text(`Seg: x${this.seg}`);
 	}
-	updateHpCounter(){
+	updateHp(delta){
+    this.hp += delta;
 		$("#hpCounter").text(`Health: ${this.hp}`);
 	}
 

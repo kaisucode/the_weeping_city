@@ -10,6 +10,15 @@ class Mob {
     this.renderPos = pvec(pos.x*TILE_SIZE, pos.y*TILE_SIZE);
   }
 
+  collideTile(){
+    let inTile = grid[this.pos.y][this.pos.x];
+    if(inTile.type == TILE_TYPES.FORTRESS){
+      this.health = 0;
+      player.updateHp(-1);
+      $.notify("mob got to fortress");
+    }
+  }
+
 	update(){
     if(this.path.length < 2)
       return;
@@ -33,10 +42,10 @@ class Mob {
   render(){
     // health bar
     fill(255,0,0);
-    rect(this.renderPos.x, this.renderPos.y, TILE_SIZE, 3);
+    rect(this.renderPos.x, this.renderPos.y, TILE_SIZE*this.health/MOB_STATS[this.type].health, 3);
 		
     // mob
-    image(this.img, this.renderPos.x, this.renderPos.y, TILE_SIZE, TILE_SIZE);
+    image(this.img, this.renderPos.x, this.renderPos.y, TILE_SIZE, TILE_SIZE, 0, 0, TILE_SIZE, TILE_SIZE);
 
   }
 

@@ -17,6 +17,6 @@
   <properties>
    <property name="name" value="fortress"/>
   </properties>
-  <image width="41" height="64" source="../fortress.png"/>
+  <image width="41" height="64" source="../tile_fortress.png"/>
  </tile>
 </tileset>

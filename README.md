@@ -1,7 +1,8 @@
 
 # the_weeping_city
 
-![img.png](img.png)
+![archives/readme_picture.png](archives/readme_picture.png)
+![archives/td_gameplay.png](archives/td_gameplay.png)
 
 # Archmage's Fortress
   - geographical influences (small barriers, swamp, lightning)
@@ -13,7 +14,9 @@
 
 # CONVENTIONS
 - `blah.pos` refers to a dictionary {"x": 10, "y": 5} with indexes into the grid. Note: the function `pvec(x, y)` returns a valid position vector.
-- mob image files are name `MOBNAME.png`
+- mob image files are named `mob_MOBNAME.png`
+- tile image files are named `tile_MOBNAME.png`
+- icon image files are named `icon_MOBNAME.png`
 - `grid[y][x]` refers to the tile at pos `pvec(x,y)`
 
 
@@ -35,13 +38,10 @@
 ### General
 
 ### Alek
-  - towers should shoot stuff (randomly)
-  - costs lives if the mobs get to the end
 
 ### Kevin
   - custom on hover info display card for towers (should probably explain what the tower is, and show its stats)
-  - developer console rwd
-  - upgrade the already set-down towers
+  - developer console rwd PLZ
   - finish the upgrade system
 
 
