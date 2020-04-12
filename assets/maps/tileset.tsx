@@ -14,6 +14,9 @@
   <image width="32" height="32" source="../tile_grass.png"/>
  </tile>
  <tile id="2">
+  <properties>
+   <property name="name" value="fortress"/>
+  </properties>
   <image width="41" height="64" source="../fortress.png"/>
  </tile>
 </tileset>
