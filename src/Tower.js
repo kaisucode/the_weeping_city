@@ -58,4 +58,8 @@ class Tower {
     }
 
   }
+
+	upgrade(upgradeName){
+		$.notify("upgrading "+upgradeName + " for " + this.type);
+	}
 }

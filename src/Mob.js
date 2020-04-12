@@ -17,17 +17,17 @@ class Mob {
 	}
 
 	update(){
-		vectorSubtracted = vectorSubtraction(mobPath[1], mobPath[0]);
-		vectorMagnitude = Math.sqrt((vectorSubtracted.x*vectorSubtracted.x)+(vectorSubtracted.y*vectorSubtracted.y));
+		let vectorSubtracted = this.vectorSubtraction(mobPath[1], mobPath[0]);
+		let vectorMagnitude = Math.sqrt((vectorSubtracted.x*vectorSubtracted.x)+(vectorSubtracted.y*vectorSubtracted.y));
 
-		if (vectorSubtraction(this.pathProgress, mobPath[1]) * vectorSubtraction(this.pathProgress, mobPath[1]) < this.speed) {
+		if (this.vectorSubtraction(this.pathProgress, mobPath[1]) * this.vectorSubtraction(this.pathProgress, mobPath[1]) < this.speed) {
 			mobPath.splice(0);
 			pathProgress = pvec(0, 0);
 		}
 
 		this.pathProgress = pvec(vectorSubtracted.x * this.speed / vectorMagnitude, vectorSubtracted.x * this.speed / vectorMagnitude);
 
-		pos = round(vectorAddition(mobPath[0] + pathProgress)*TILE_SIZE);
+		// pos = round(vectorAddition(mobPath[0] + pathProgress)*TILE_SIZE);
 
 	}
   render(){
