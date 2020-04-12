@@ -13,6 +13,8 @@
 
 # CONVENTIONS
 - `blah.pos` refers to a dictionary {"x": 10, "y": 5} with indexes into the grid. Note: the function `pvec(x, y)` returns a valid position vector.
+- mob image files are name `MOBNAME.png`
+- `grid[y][x]` refers to the tile at pos `pvec(x,y)`
 
 
 # Tower descriptions
@@ -37,10 +39,8 @@
   - costs lives if the mobs get to the end
 
 ### Kevin
-  - mobs
-    - follow path in a line from path[0] to path[1] until you get to path[1], then delete path[0] OR something like this
-    - path = [pvec(1,1), pvec(1,10), pvec(15,10)] 
+- custom on hover info display card for towers (should probably explain what the tower is, and show its stats)
 
-MOBNAME.png convention
-y-x grid
+
+
 

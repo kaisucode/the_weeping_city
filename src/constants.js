@@ -16,6 +16,21 @@ const TOWER_COSTS = {
   "demon": 30
 };
 
+const TOWER_STATS = {
+  "blob": {
+    "range": 10
+  },
+  "witch": {
+    "range": 10
+  },
+  "institute": {
+    "range": 10
+  },
+  "demon": {
+    "range": 10
+  }
+};
+
 /*
  * grid will be a 2D array of tile types
  * we use grid to determine for example, if placement of a tower is valid
