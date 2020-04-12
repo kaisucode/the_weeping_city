@@ -1,0 +1,9 @@
+[
+  {"jumpydude": 1},
+  {"jumpydude": 1, "dog": 1},
+  {"dog": 10},
+  {"jumpydude": 5, "dog": 10},
+  {"jumpydude": 5, "dog": 10},
+  {"jumpydude": 5, "dog": 10},
+  {"jumpydude": 100, "dog": 100}
+]

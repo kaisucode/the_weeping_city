@@ -85,11 +85,11 @@ const MOB_TYPES = {
 // TODO: make this legit
 const MOB_STATS = {
   "dog": {
-    "speed": 0.01,
+    "speed": 0.5,
     "health": 10
   },
   "jumpydude": {
-    "speed": 0.5,
+    "speed": 0.7,
     "health": 100
   }
 }

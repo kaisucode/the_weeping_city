@@ -21,7 +21,7 @@ class Player {
   finishPlacingTower(){
     if(this.focussed_tower.locationValid()){
       if(this.seg >= this.focussed_tower.cost){
-        this.seg -= this.focussed_tower.cost;
+        this.updateSeg(-this.focussed_tower.cost);
         this.towers.push(this.focussed_tower);
         this.focussed_tower.performBuild();
       }
@@ -45,10 +45,12 @@ class Player {
       }
     }
   }
-	updateSegCounter(){
+	updateSeg(delta){
+    this.seg += delta;
 		$("#segCounter").text(`Seg: x${this.seg}`);
 	}
-	updateHpCounter(){
+	updateHp(delta){
+    this.hp += delta;
 		$("#hpCounter").text(`Health: ${this.hp}`);
 	}
 
