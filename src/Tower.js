@@ -5,6 +5,13 @@ class Tower {
     this.cost = TOWER_COSTS[this.type];
     this.built = false;
     this.projectile = null;
+
+    this.speed = 1000*5;
+  }
+
+  launchProjectile(){
+    this.projectile = new Projectile(pvec(this.pos.x, this.pos.y), PROJECTILE_TYPES.SPIT, pvec(random(), random()));
+    setTimeout(() => {this.launchProjectile() }, this.speed*(random()+0.5));
   }
 
   // this function returns the boolean value "is the location of the building (which has this.built=false right now) on top of other stuff on the grid?"
@@ -28,6 +35,7 @@ class Tower {
         grid[this.pos.y+dy][this.pos.x+dx] = this.type;
       }
     }
+    setTimeout(() => {this.launchProjectile() }, this.speed*(random()+0.5));
   }
 
   render(){
@@ -56,7 +64,15 @@ class Tower {
     if(this.projectile){
       this.projectile.render();
     }
+  }
 
+  update(){
+    if(this.projectile){
+      let hit_something = this.projectile.update();
+      if(hit_something){
+        this.projectile = null;
+      }
+    }
   }
 
 	upgrade(upgradeName){

@@ -37,6 +37,7 @@ class Player {
   renderTowers(mousePos){
     for(let i = 0; i < this.towers.length; i++){
       this.towers[i].render();
+      this.towers[i].update();
     }
     if (this.mode == PLAYER_MODES.HOVERING){
       if(!this.focussed_tower.built){
