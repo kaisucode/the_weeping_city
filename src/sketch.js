@@ -53,6 +53,7 @@ function spawnSpacedMobs(mobs_left_to_spawn, mob_type){
 function nextWave(){
   if(wave_ct < wave_data.length){
     wave_ct++;
+		$("#waveCounter").text(`${wave_ct}/${wave_data.length}`);
     for(let i in wave_data[wave_ct]){
       spawnSpacedMobs(wave_data[wave_ct][i], i);// i must be a MOB_TYPES
     }
