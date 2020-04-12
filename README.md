@@ -41,7 +41,6 @@
 
 ### Kevin
   - custom on hover info display card for towers (should probably explain what the tower is, and show its stats)
-  - developer console rwd PLZ
   - finish the upgrade system
 
 
