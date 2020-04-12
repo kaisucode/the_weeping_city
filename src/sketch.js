@@ -12,6 +12,7 @@ let player = new Player();
 
 let mobs = [];
 let mobImages = {};
+let mobPath = [pvec(0, 0), pvec(0, 1), pvec(0, 2), pvec(0, 3), pvec(1, 3), pvec(2, 3)];
 
 function setup(){
   let canvas = createCanvas(TILE_SIZE*NUM_TILES.x,TILE_SIZE*NUM_TILES.y);
@@ -38,6 +39,7 @@ function draw(){
 	player.updateHpCounter();
 
 	for (let i in mobs){
+		mobs[i].update();
 		mobs[i].render();
 	}
 
