@@ -120,6 +120,7 @@ function mousePressed(){
 		}
 		else{
 			if (temp != null){
+				player.towers[player.selectedTowerId].selected = false;
 				player.selectedTowerId = temp
 				player.selectTowerMode();
 			}

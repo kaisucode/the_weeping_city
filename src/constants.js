@@ -23,13 +23,13 @@ const UPGRADE_COSTS = {
 
 const TOWER_STATS = {
   "blob": {
-    "range": 10
+    "range": 6
   },
   "witch": {
-    "range": 10
+    "range": 6
   },
   "institute": {
-    "range": 10
+    "range": 6
   },
   "demon": {
     "range": 10

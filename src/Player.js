@@ -63,10 +63,12 @@ class Player {
 	placeTowerMode(){
 		$("#commandContainer").hide();
 		$("#towerContainer").show();
+		this.towers[this.selectedTowerId].selected = false;
 	}
 	selectTowerMode(){
 		$("#commandContainer").show();
 		$("#towerContainer").hide();
+		this.towers[this.selectedTowerId].selected = true;
     this.mode = PLAYER_MODES.UPGRADING;
 	}
 
