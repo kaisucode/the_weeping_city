@@ -28,13 +28,13 @@ class Player {
         this.focussed_tower.performBuild();
 				this.selectedTowerId = this.towerIndex;
 				this.towerIndex++;
-				this.selectTowerMode();
+				this.mode = PLAYER_MODES.NOTHING;
       }
       else{
         $.notify("you dont have enough segs to buy that dude");
       }
     }
-    else{
+		else{
       $.notify("hey, don't place that there");
     }
   }
@@ -67,6 +67,7 @@ class Player {
 	selectTowerMode(){
 		$("#commandContainer").show();
 		$("#towerContainer").hide();
+    this.mode = PLAYER_MODES.UPGRADING;
 	}
 
 }

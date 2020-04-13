@@ -16,6 +16,11 @@ const TOWER_COSTS = {
   "demon": 30
 };
 
+const UPGRADE_COSTS = {
+	"1": 10, 
+	"2": 30
+}
+
 const TOWER_STATS = {
   "blob": {
     "range": 10

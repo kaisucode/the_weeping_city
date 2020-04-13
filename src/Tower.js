@@ -85,7 +85,15 @@ class Tower {
   }
 
 	upgrade(upgradeName){
-		// $.notify("upgrading "+upgradeName + " for " + this.type);
-		$.notify(`Upgrading ${upgradeName} for ${this.type}, id=${player.selectedTowerId}`);
+		if (this.upgradeLevels[upgradeName] == 3)
+			$.notify(`${this.type} ${upgradeName} already at max upgrade level`);
+		else if(player.seg < UPGRADE_COSTS[this.upgradeLevels[upgradeName]])
+			$.notify("you dont have enough segs to buy that dude");
+		else{
+			player.updateSeg(-UPGRADE_COSTS[this.upgradeLevels[upgradeName]]);
+			this.upgradeLevels[upgradeName]++;
+			$.notify(`Upgrading ${this.type} ${upgradeName} to lvl ${this.upgradeLevels[upgradeName]}, id=${player.selectedTowerId}`);
+		}
 	}
+
 }

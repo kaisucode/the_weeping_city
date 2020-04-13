@@ -113,12 +113,12 @@ function draw(){
 
 function mousePressed(){
 	if(mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-		if(player.focussed_tower != null){
+		let currentMousePos = xylocation_to_pos(mouseX, mouseY);
+		let temp = towerIdGrid[currentMousePos.y][currentMousePos.x];
+		if(player.focussed_tower != null && temp == null){
 			player.finishPlacingTower();
 		}
 		else{
-			let currentMousePos = xylocation_to_pos(mouseX, mouseY);
-			let temp = towerIdGrid[currentMousePos.y][currentMousePos.x];
 			if (temp != null){
 				player.selectedTowerId = temp
 				player.selectTowerMode();
@@ -130,10 +130,8 @@ function mousePressed(){
 function keyPressed(){
 	if (keyCode === 27) {		// Esc
 		player.placeTowerMode();
-    if (player.mode == PLAYER_MODES.HOVERING){
-			player.focussed_tower = null;
-			player.mode = PLAYER_MODES.NOTHING;
-		}
+		player.focussed_tower = null;
+		player.mode = PLAYER_MODES.NOTHING;
 	}
 }
 
