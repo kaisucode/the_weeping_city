@@ -19,6 +19,8 @@
 - icon image files are named `icon_MOBNAME.png`
 - `grid[y][x]` refers to the tile at pos `pvec(x,y)`
 
+# NOTES
+- always call `copy_pvec(v)`. just do it.
 
 # Tower descriptions
 - witchtowers: long range projectiles, cool spells
@@ -39,7 +41,6 @@
 
 ### Alek
   - real projectiles
-  - real pathfinding
 
 ### Kevin
   - custom on hover info display card for towers (should probably explain what the tower is, and show its stats)

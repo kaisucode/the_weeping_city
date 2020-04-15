@@ -29,7 +29,9 @@ let mob_spawn_space = 1000; // in miliseconds
 
 let mobs = [];
 let mobImages = {};
-const mobPath = [pvec(0, 0), pvec(0, 1), pvec(0, 2), pvec(0, 3), pvec(1, 3), pvec(2, 3), pvec(10,3), pvec(10, 10), pvec(15, 10), pvec(14,8)];
+let mobPath = [];
+let spawnPos;
+let fortressPos;
 let bgImage;
 
 let current_map = "basic_map"; // load this map
@@ -39,13 +41,50 @@ function mapLoadedCallback(data){
   for(let y=0; y < data.layers.map.length; y++){
     for(let x=0; x < data.layers.map[y].length; x++){
       grid[y][x] = new Tile(tile_ids[data.layers.map[y][x]].tilename, pvec(x, y), null); // tilename is a TILE_TYPE
+      if (grid[y][x].type == TILE_TYPES.SPAWN)
+        spawnPos = pvec(x,y);
+      if (grid[y][x].type == TILE_TYPES.FORTRESS)
+        fortressPos = pvec(x,y);
     }
+  }
+
+  let cctt = 0;
+  let cur_pos = spawnPos;
+  let last_pos = cur_pos;
+  while(!equal_pvecs(cur_pos, fortressPos)){
+    cctt++; 
+    if(cctt > NUM_TILES.x*NUM_TILES.y) // prevent potential infinite loops from impossible maps
+      break;
+    let next_pos;
+    let ds = [pvec(-1,0),pvec(1,0),pvec(0,1),pvec(0,-1)];
+    for(let i in ds){
+      let nx = cur_pos.x + ds[i].x;
+      let ny = cur_pos.y + ds[i].y;
+      let npos = pvec(nx, ny);
+      if(nx >= 0 && ny >= 0 && nx < NUM_TILES.x && ny < NUM_TILES.y && !equal_pvecs(npos, last_pos)){
+        if(grid[ny][nx].type == TILE_TYPES.PATH){
+          next_pos = copy_pvec(npos);
+          break;
+        }
+      }
+    }
+    mobPath.push(copy_pvec(cur_pos));
+    // could only add it if its in a different direction...
+    last_pos = copy_pvec(cur_pos);
+    if(next_pos){
+      cur_pos = copy_pvec(next_pos);
+    }
+    else{
+      mobPath.push(fortressPos);
+      break;
+    }
+
   }
 }
 
 function spawnSpacedMobs(mobs_left_to_spawn, mob_type){
   if(mobs_left_to_spawn>0){
-    mobs.push(new Mob(pvec(0,0), mob_type));
+    mobs.push(new Mob(spawnPos, mob_type));
     setTimeout(()=>{spawnSpacedMobs(mobs_left_to_spawn-1, mob_type)}, mob_spawn_space*(0.5+random()));
   }
 }

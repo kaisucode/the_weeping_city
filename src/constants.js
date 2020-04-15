@@ -55,6 +55,14 @@ function pvec(x, y){
   return {"x": x, "y":y};
 }
 
+function copy_pvec(v){
+  return pvec(v.x, v.y);
+}
+
+function equal_pvecs(a, b){
+  return (a.x == b.x && a.y == b.y);
+}
+
 const CENTER = pvec(NUM_TILES*TILE_SIZE>>1, NUM_TILES*TILE_SIZE>>1);
 
 // TODO: add more modes

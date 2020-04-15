@@ -1,6 +1,6 @@
 class Mob {
   constructor(pos, type){
-    this.pos = pos;
+    this.pos = copy_pvec(pos);
     this.type = type;
     this.speed = MOB_STATS[this.type].speed;
     this.health = MOB_STATS[this.type].health;

@@ -1,6 +1,6 @@
 class Tower {
   constructor(pos, type, id){
-    this.pos = pos; 
+    this.pos = copy_pvec(pos);
     this.type = type;
     this.cost = TOWER_COSTS[this.type];
     this.built = false;

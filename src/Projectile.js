@@ -1,6 +1,6 @@
 class Projectile {
   constructor(pos, type, vel){
-    this.pos = pos; 
+    this.pos = copy_pvec(pos);
     this.renderPos = pvec(pos.x*TILE_SIZE, pos.y*TILE_SIZE);
     this.vel = vel;
     this.type = type;
