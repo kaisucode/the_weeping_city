@@ -30,7 +30,7 @@ class Tower {
       return false;
     for (let dx = 0; dx < 2; dx++){
       for (let dy = 0; dy < 2; dy++){
-        if(grid[this.pos.y+dy][this.pos.x+dx].type != TILE_TYPES.EMPTY){
+        if(grid[this.pos.y+dy][this.pos.x+dx].type != TILE_TYPES.GRASS){
           return false;
         }
       }
