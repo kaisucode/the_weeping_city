@@ -6,22 +6,35 @@ class Tower {
     this.built = false;
     this.projectile = null;
 		this.id = id;
-		this.range = TOWER_STATS[this.type]["range"];
 		this.selected = false;
 
 		this.upgradeLevels = {
 			"power": 1, 
-			"speed": 1, 
+			"speed": 3, 
 			"range": 1, 
 			"specialAttack": 1
 		}
 
-    this.speed = 1000*5;
+    this.speed = 1000;
   }
 
   launchProjectile(){
-    this.projectile = new Projectile(pvec(this.pos.x, this.pos.y), PROJECTILE_TYPES.SPIT, pvec(random(), random()));
-    setTimeout(() => {this.launchProjectile() }, this.speed*(random()+0.5));
+    let mob_to_kill = null;
+    for(let i in mobs){
+      if (Math.pow(mobs[i].renderPos.x - TILE_SIZE*(this.pos.x+1), 2) + Math.pow(mobs[i].renderPos.y - TILE_SIZE*(this.pos.y+1), 2) < Math.pow(this.upgradeLevels.range*TOWER_STATS[this.type].range*TILE_SIZE, 2)){
+        mob_to_kill = mobs[i];
+        break;
+      }
+    }
+    if(mob_to_kill){
+      let magVel = TOWER_STATS[this.type].speed * this.upgradeLevels.speed;
+      let startPos = pvec((this.pos.x+1)*TILE_SIZE, (this.pos.y+1)*TILE_SIZE);
+      let projectile_vel = mob_to_kill.oracle_path_prediction(magVel, startPos, pvec(10,10));
+      if(projectile_vel){
+        this.projectile = new Projectile(pvec(this.pos.x+1, this.pos.y+1), PROJECTILE_TYPES.SPIT, projectile_vel);
+        setTimeout(() => {this.launchProjectile() }, this.speed*(random()+0.5));
+      }
+    }
   }
 
   // this function returns the boolean value "is the location of the building (which has this.built=false right now) on top of other stuff on the grid?"
@@ -52,7 +65,7 @@ class Tower {
   render(){
     if (!this.built || this.selected) {
 			fill('rgba(0,255,0,0.25)');
-			circle((this.pos.x+1)*TILE_SIZE, (this.pos.y+1)*TILE_SIZE, this.range*this.upgradeLevels["range"]*TILE_SIZE);
+			circle((this.pos.x+1)*TILE_SIZE, (this.pos.y+1)*TILE_SIZE, TOWER_STATS[this.type].range*this.upgradeLevels["range"]*TILE_SIZE);
     }
 
     if(this.type == TOWER_TYPES.BLOB){
