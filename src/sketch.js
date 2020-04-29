@@ -30,7 +30,7 @@ let mob_spawn_space = 1000; // in miliseconds
 let mobs = [];
 let mobImages = {};
 let mobPath = [];
-let spawnPos;
+let spawnPos = pvec(0,0);
 let fortressPos;
 let bgImage;
 
@@ -108,8 +108,15 @@ function setup(){
   canvas.id("p5canvas");
 
   bgImage = loadImage(`assets/maps/${current_map}/tilemap.png`);
-  $.getJSON(`assets/maps/${current_map}/tilemap.json`, mapLoadedCallback);
-  $.getJSON(`assets/maps/${current_map}/waves.json`, (data)=>{ wave_data = data; nextWave(); });
+  let map_load_promise = $.getJSON(`assets/maps/${current_map}/tilemap.json`);
+  let waves_load_promise = $.getJSON(`assets/maps/${current_map}/waves.json`);
+
+  // promises are epic!
+  $.when(waves_load_promise, map_load_promise).done((data_wave_load, data_map_load)=>{ 
+    mapLoadedCallback(data_map_load[0]);
+    wave_data = data_wave_load[0];
+    nextWave(); 
+  });
 
   for(let i in MOB_TYPES){
     mobImages[MOB_TYPES[i]] = loadImage(`assets/mob_${MOB_TYPES[i]}.png`);
