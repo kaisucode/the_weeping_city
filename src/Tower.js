@@ -8,6 +8,7 @@ class Tower {
 		this.id = id;
 		this.range = TOWER_STATS[this.type]["range"];
 		this.selected = false;
+		this.img = towerImages[this.type];
 
 		this.upgradeLevels = {
 			"power": 1, 
@@ -55,22 +56,12 @@ class Tower {
 			circle((this.pos.x+1)*TILE_SIZE, (this.pos.y+1)*TILE_SIZE, this.range*this.upgradeLevels["range"]*TILE_SIZE);
     }
 
-    if(this.type == TOWER_TYPES.BLOB){
-      fill(0,255,0);
-      rect(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE*2, TILE_SIZE*2);
-    }
-    else if(this.type == TOWER_TYPES.DEMON){
-      fill(0,255,0);
-      rect(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE*2, TILE_SIZE*2);
-    }
-    else if(this.type == TOWER_TYPES.WITCH){
-      fill(0,255,255);
-      rect(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE*2, TILE_SIZE*2);
-    }
-    else if (this.type == TOWER_TYPES.INSTITUTE){
-      fill(255,255,0);
-      rect(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE*2, TILE_SIZE*2);
-    }
+		if (this.img)
+			image(this.img, this.pos.x*TILE_SIZE, (this.pos.y-1)*TILE_SIZE);
+		else {
+			fill(0,255,0);
+			rect(this.pos.x*TILE_SIZE, this.pos.y*TILE_SIZE, TILE_SIZE*2, TILE_SIZE*2);
+		}
 
     if (!this.built) {
       fill(0);

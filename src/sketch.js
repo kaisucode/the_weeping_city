@@ -29,6 +29,7 @@ let mob_spawn_space = 1000; // in miliseconds
 
 let mobs = [];
 let mobImages = {};
+let towerImages = {};
 let mobPath = [];
 let spawnPos = pvec(0,0);
 let fortressPos;
@@ -122,6 +123,11 @@ function setup(){
     mobImages[MOB_TYPES[i]] = loadImage(`assets/mob_${MOB_TYPES[i]}.png`);
   }
 
+	towerImages["blob"] = loadImage(`assets/towerBlob.png`);
+	towerImages["institute"] = loadImage(`assets/towerInstitute.png`);
+	towerImages["witch"] = loadImage(`assets/towerWitch.png`);
+	towerImages["demon"] = loadImage(`assets/towerDemon.png`);
+
 }
 
 function draw(){
@@ -135,11 +141,11 @@ function draw(){
   for(let y = 0; y < NUM_TILES.y; y++){
     line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES.x, TILE_SIZE*y);
   }
-  for(let y = 0; y < NUM_TILES.y; y++){
-    for(let x = 0; x < NUM_TILES.x; x++){
-      text(`${y},${x}`, TILE_SIZE*x, TILE_SIZE*(y+1/2));
-    }
-  }
+	for(let y = 0; y < NUM_TILES.y; y++){
+		for(let x = 0; x < NUM_TILES.x; x++){
+			text(`${y},${x}`, TILE_SIZE*x, TILE_SIZE*(y+1/2));
+		}
+	}
 
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
 
