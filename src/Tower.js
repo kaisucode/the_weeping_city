@@ -56,7 +56,7 @@ class Tower {
     this.built = true;
     for (let dx = 0; dx < 2; dx++){
       for (let dy = 0; dy < 2; dy++){
-        grid[this.pos.y+dy][this.pos.x+dx] = this.type;
+        grid[this.pos.y+dy][this.pos.x+dx].type = TILE_TYPES.TOWER;
         towerIdGrid[this.pos.y+dy][this.pos.x+dx] = this.id;
       }
     }
