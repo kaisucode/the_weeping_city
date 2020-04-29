@@ -141,11 +141,11 @@ function draw(){
   for(let y = 0; y < NUM_TILES.y; y++){
     line(0, TILE_SIZE*y, TILE_SIZE*NUM_TILES.x, TILE_SIZE*y);
   }
-	for(let y = 0; y < NUM_TILES.y; y++){
-		for(let x = 0; x < NUM_TILES.x; x++){
-			text(`${y},${x}`, TILE_SIZE*x, TILE_SIZE*(y+1/2));
-		}
-	}
+	// for(let y = 0; y < NUM_TILES.y; y++){
+	//   for(let x = 0; x < NUM_TILES.x; x++){
+	//     text(`${y},${x}`, TILE_SIZE*x, TILE_SIZE*(y+1/2));
+	//   }
+	// }
 
   player.renderTowers(xylocation_to_pos(mouseX, mouseY));
 
